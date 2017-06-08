@@ -1,0 +1,23 @@
+.content{
+	width: 10rem;
+	margin: 0 auto;
+	max-width: 1000px;
+}
+
+.homeHead{
+	text-align: center;
+	padding: 0.5rem 0;
+	background-color: white;
+	height: 3rem;
+	img{
+		width: auto;
+		height: 2rem;
+		border-radius: 50%;
+	}	
+}
+
+.authorName{
+	font-size: 0.4rem;
+	color: gray;
+	text-align: center;
+}

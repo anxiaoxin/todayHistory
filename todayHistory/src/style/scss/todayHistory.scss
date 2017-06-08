@@ -1,0 +1,80 @@
+.todayHistory{
+	font-size: 0.3rem;
+	background-color: white;
+	ul{
+		padding: 0.5rem;
+		list-style-type: none;
+		li{
+			padding: 0.2rem;
+			/* border-top: 0.5px solid gray; */
+		}
+	}
+}
+.historyDetail{
+	position: relative;
+	padding-right: 0.2rem;
+}
+.historyDate{
+	font-weight: bold;
+	padding-bottom: 0.2rem;
+}
+.historyTitle{
+	text-indent: 1em;
+}
+.arrow{
+	position: absolute;
+	right: -0.1rem;
+	top: 40%;
+}
+
+.historycontentTitle{
+	font-size: 0.5rem;
+	font-weight: bold;
+	text-align: center;
+	word-wrap: break-word;
+			white-space: pre-wrap;
+}
+
+.historycontent{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: white;
+	z-index: 100;
+	height: 100%;
+	overflow: scroll;
+	border-radius: 0.2rem;
+	padding: 0.5rem 0.2rem;
+	padding-bottom: 0;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */		
+}
+pre {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	text-align: justify;
+	line-height: 0.5rem;
+}
+
+.historycontentImg{
+	li{
+		text-align: center;
+	}
+	img{
+		width: 100%;
+		height: auto;
+	}
+}
+
+.close{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 0.5rem;
+	background-color: gray;
+}
