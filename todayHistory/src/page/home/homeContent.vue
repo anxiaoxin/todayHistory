@@ -7,10 +7,22 @@
 			</router-link>
 		</div>
 		<div class="homepageItem">
+			<router-link to="/joke/joketext" class="">
+				<img src="../../assets/img/smile.jpg" alt="">
+				<div class="itemtitle"><span>笑话大全</span></div>
+			</router-link>
+		</div>		
+		<div class="homepageItem">
 			<router-link to="" class="">
 				<img src="" alt="">
 				<div class="itemtitle"><span>暂无</span></div>
 			</router-link>
 		</div>		
+		<div class="homepageItem">
+			<router-link to="" class="">
+				<img src="" alt="">
+				<div class="itemtitle"><span>暂无</span></div>
+			</router-link>
+		</div>				
 	</div>
 </template>

@@ -1,0 +1,33 @@
+.openPagehead{
+	height: 2rem;
+	color: white;
+	text-align: center;
+	padding-top: 1.2rem;
+	font-weight: bolder;
+}
+@keyframes lishow {
+	0%{
+		top:-0.2rem;
+	}
+	100%{
+		top: 0rem;
+	}
+}
+
+@keyframes feetRotate {
+	0%{
+		transform: rotate(0);
+	}
+	25%{
+		transform: rotate(-15deg);	
+	}
+	50%{
+		transform: rotate(0);	
+	}
+	75%{
+		transform: rotate(15deg);	
+	}	
+	100%{
+		transform: rotate(0);	
+	}	
+}

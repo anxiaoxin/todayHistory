@@ -1,0 +1,76 @@
+.jokeHead{
+	background-image: url("assets/img/smileL.jpg");
+	background-repeat: round;
+
+}
+.jokeContent{
+	margin-top: 0.05rem;
+}
+.jokeroute{
+	display: flex;
+	text-align: center;
+	font-size: 0.5rem;
+}
+.jokelink{
+	display: inline-block;
+	flex:1;
+	width: 1.5rem;
+	height: 1.5rem;	
+	overflow: hidden;
+	position: relative;
+	img{
+		width: 1.5rem;
+		height: 3rem;
+		position: relative;
+	}
+}
+
+.jokeLinkActive{
+	top: -1.55rem;
+}
+.jokeLinkAnimation{
+	animation-name:feetRotate;
+	animation-timing-function:linear;
+	animation-duration: 2s;	
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;	
+	transform-origin: bottom;
+}
+
+.jokeList{
+	font-size: 0.5rem;
+	position: relative;
+	ul{
+		list-style-type: none;
+		margin-top: 0;
+		position: relative;
+		li{
+			position: relative;
+			border-bottom: 1px gray solid;
+			padding: 0.2rem 0; 
+			width: 95%;
+			animation-name:lishow;
+			animation-timing-function:linear;
+			animation-duration: 0.5s;
+			.addtime{
+				font-size: 0.2rem;
+				color: gray;
+				margin-bottom: 0.2rem;
+			}
+			.textContent{
+				text-align: justify;
+				font-size: 0.3rem;
+				line-height: 0.4rem;
+			}
+			.imgdiv{
+				text-align: center;
+			}
+			.refresh{
+				font-size: 0.3rem;
+				cursor: pointer;
+				text-align: center;
+				color: red;
+			}
+		}
+	}
+}

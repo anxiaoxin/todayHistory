@@ -30,9 +30,6 @@
 					</li>
 				</ul>
 			</div>
-			<div class="close" v-on:click="close()">
-				<-- Back TO List
-			</div>
 		</div>
 	</div>
 </template>
@@ -49,13 +46,17 @@
 		},
 		methods:{
 			getDetails(id){
+				this.$router.push("/history/"+id);
 				document.body.style.overflow = "hidden";
 				this.$store.commit("getDetailData",{_this:this,id:id});
-			},
-			close(){
-				document.body.style.overflow = "";
-				this.historycontent = [];
 			}
+		},
+		beforeRouteUpdate(to,from,next){
+			if(to.path == "/history/list"){
+				this.historycontent = [];
+				document.body.style.overflow = "";
+			}
+			next();
 		}
 	}
 </script>

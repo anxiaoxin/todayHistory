@@ -1,13 +1,15 @@
+$imgsize: 3.5rem;
 .homepageContent{
 	display: flex;
 	justify-content: space-around;
+	flex-wrap: wrap;
 	background-color: white;
 	margin-top: 0.2rem;
 }
 
 .homepageItem{
-	width: 4rem;
-	height: 4rem;
+	width: $imgsize;
+	height: $imgsize;
 	box-sizing:border-box;
 	-moz-box-sizing:border-box; /* Firefox */
 	-webkit-box-sizing:border-box; /* Safari */	

@@ -27,9 +27,11 @@ const store = new Vuex.Store(Store)
 
 const router = new VueRouter({routes})
 
+
 //定义jsonp回调，使用闭包
 window.callback = function(data){
-	store.commit("setData",data)
+	console.log(4);
+	store.dispatch("setData",data)
 }
 
 /* eslint-disable no-new */
