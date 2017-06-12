@@ -1,30 +1,28 @@
-# y
+# 基于Vue-cli + Vue + Vue-router + Vuex + webpack单页小应用
+#### 环境配置推荐教程 [Vue2+VueRouter2+webpack 构建项目实战](http://blog.csdn.net/ycm_920414/article/details/61913385)
 
-> A Vue.js project
+在跟着上述教程走了一遍以后大致对这种开发的方式有了一定的理解，所以打算做一个自己的小应用进行一下融会贯通。但没有自己的服务器并且也不会后台，于是
+在网上搜索着免费的api接口，没想到还真一搜一大把。所以暂时选了几个有意思的来做一下功能，完成的有《历史上的今天》与《笑话大全》。只要按照上述教程完成demo，并在一定程度上理解了工作流程后就可以随便写了，代码的写法因人而异，本应用代码也较简单，只需理解运行流程即可。所以大概罗列一下主要的目录结构及文件，部分参考了上述教程推荐的文件存放方式。
+## 目录结构
+所有代码都在src文件下
 
-## Build Setup
+1. **assets**
+ - 图片资源文件
+2. **config**
+ - api.js  
+ 由于该单页小应用没有后台，所有的数据都是通过jsonp的方式获取数据。该文件是写的读取数据的api，并注册在Vue全局下（笑话大全的Api有问题，图片地址错误）。
+- route.js  
+ Vue-router的路由配置
+- setFontSize.js  
+ 为了方便的适配屏幕的大小，通过计算设置HTML的font-size，并采用rem单位。
+- vuex.js  
+  由于页面结构比较简单，开始是不打算加入vuex，但由于数据的获取是通过jsonp，回调函数只能注册在全局，这样组件获取数据就会比较麻烦。所以加入vuex
+  为两者之间的桥梁。
+3. **page**
+  - 所有的组件都在该文件夹下面，并且每一项功能的组件会在不同的文件夹下面，便于区分。
+4. **style**
+  - 与组件对应的文件结构（具体上可能有些差异）。
+5. **main.js**
+  - webpack打包的入口
+  
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
