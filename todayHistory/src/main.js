@@ -30,7 +30,6 @@ const router = new VueRouter({routes})
 
 //定义jsonp回调，使用闭包
 window.callback = function(data){
-	console.log(4);
 	store.dispatch("setData",data)
 }
 
@@ -39,5 +38,5 @@ new Vue({
   router,
   store,
   el: '#app',
-  render: (h) => h(App)
+  render: (h) => h(App) //h函数是
 })

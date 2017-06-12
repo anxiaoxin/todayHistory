@@ -1,4 +1,4 @@
-var setSize = function(doc, win){
+let setSize = function(doc, win){
 	var docEl = document.documentElement,
 		isIOS = navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
 		dpr = isIOS ? Math.min(window.devicePixelRatio, 3) : 1,
