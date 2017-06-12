@@ -1,5 +1,5 @@
 .todayHistory{
-	font-size: 0.3rem;
+	font-size: 0.5rem;
 	background-color: white;
 	ul{
 		padding: 0.5rem;
@@ -20,11 +20,13 @@
 	padding-right: 0.2rem;
 }
 .historyDate{
+	font-size: 0.3rem;
 	font-weight: bold;
 	padding-bottom: 0.2rem;
 }
 .historyTitle{
 	text-indent: 1em;
+	font-size: 0.3rem;
 }
 .arrow{
 	position: absolute;
@@ -33,7 +35,7 @@
 }
 
 .historycontentTitle{
-	font-size: 0.5rem;
+	font-size: 0.4rem;
 	font-weight: bold;
 	text-align: center;
 	word-wrap: break-word;
@@ -41,6 +43,7 @@
 }
 
 .historycontent{
+	font-size: 0.3rem;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -71,15 +74,4 @@ pre {
 		width: 100%;
 		height: auto;
 	}
-}
-
-.close{
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	width: 100%;
-	text-align: center;
-	font-size: 0.5rem;
-	background-color: gray;
 }
