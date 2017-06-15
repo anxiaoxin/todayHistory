@@ -1,4 +1,7 @@
 import authorInfo from '../page/author/info'
+import authorname from '../page/author/name'
+import authorage from '../page/author/age'
+import defaultpage from '../page/default'
 
 import home from '../page/home/home'
 import homehead from '../page/home/homehead'
@@ -26,11 +29,25 @@ export default [
 				},
 			},
 			{
-				path: '/authorInfo',
+				path: '/authorInfo/:type',
 				components: {
 					head:homehead,
 					content:authorInfo
-				},				
+				},			
+				children:[
+					{
+						path:"/authorInfo/default",
+						component:defaultpage
+					},
+					{
+						path:"/authorInfo/name",
+						component:authorname
+					},
+					{
+						path:"/authorInfo/age",
+						component:authorage
+					}
+				]	
 			},
 			{
 				path: '/history/:id',

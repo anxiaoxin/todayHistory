@@ -27,7 +27,6 @@
 			}
 		},
 		created(){
-			console.log(1);
 			this.$store.commit("getJokeImg",this);
 		},
 		methods:{

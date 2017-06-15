@@ -31,3 +31,24 @@
 		transform: rotate(0);	
 	}	
 }
+.info{
+	text-align: center;
+	.infoItem{
+		margin-top: 0.1rem;
+		background-color: white;
+		padding: 1rem 0 ;
+		.title{
+			margin-top: 0.2rem;
+			font-size: 0.4rem;
+		}
+	}
+	a:visited{
+		color: black;
+	}
+}
+.copyright{
+	text-align: center;
+	color: gray;
+	font-size: 0.3rem;
+	margin: 0.5rem 0;
+}

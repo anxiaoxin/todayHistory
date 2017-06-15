@@ -13,6 +13,7 @@ let setSize = function(doc, win){
 		docEl.dataset.width = width
 		docEl.dataset.percent = 100 * (width / 750);
 		docEl.style.fontSize = 100 * (width / 750) + 'px';
+		console.log(docEl.style.fontSize);
 	};
 	recalc()
 	if(!document.addEventListener) return;

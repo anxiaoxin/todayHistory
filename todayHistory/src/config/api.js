@@ -22,7 +22,6 @@ function getDetails(id){
 }
 
 function getJokeText(){
-	console.log(3);
 	getData("http://api.jisuapi.com/xiaohua/text?pagenum=1&pagesize=20&sort=rand&appkey=118614f89846668e&callback=callback");
 }
 
@@ -32,7 +31,6 @@ function getJokeImg(){
 
 function refresh(data){
 	if(data.reason == "success" || data.msg == "ok"){
-		console.log(data);
 		return data.result;
 	}else{
 		return data.error_code;
