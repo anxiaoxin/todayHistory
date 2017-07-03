@@ -37,11 +37,12 @@ function refresh(data){
 	}
 }
 
+//前端聊天功能的实现
 const _io = {
 	socket:{},
-	vue:{},
-	firstTime:true,
-	loginInfo:{},
+	vue:{}, //与当前聊天的vue组件绑定，可能是login.vue或者talkContent.vue
+	iflogin:false,//是否已经登录
+	//以下变量是进行缓存的用的
 	onlineUsers:{},
 	onlineCount:0,
 	friends:{len:0},
@@ -49,27 +50,24 @@ const _io = {
 	myName:"",
 	messageList:[],
 	init(vue){
-		//与登录页的vue绑定
+		//绑定vue组件
 		this.vue = vue;
 		//绑定this
 		let _this = this;
-		//如果此时socket已经断开
-		if(this.firstTime){
+		//如果该用户还没登录
+		if(!this.iflogin){
 			this.socket = io.connect('ws://172.16.22.18:3000');
 			this.socket.on("login",function(data){
 				if(data){
 					//对基本数据进行缓存，当用户回到聊天界面时显示
 					_this.onlineUsers = data.onlineUsers;
 					_this.onlineCount = data.onlineCount;
-
-					if(_this.firstTime){
-						this.myName = data.userName;
+					if(!this.iflogin){ //如果已经登录，则直接跳到群聊页面
 						_this.vue.$router.push({ path: '/talk/rome' });
-						_this.firstTime = false;
-					}else{
-						_this.messageList.push({inout:true,content:data.userName + "加入群聊"});
-					}	
-					_this.setMessageData();		
+						_this.iflogin = true;
+					}
+					_this.messageList.push({inout:true,content:data.userName + "加入群聊"});
+					_this.setMessageData();	
 				}else{
 					alert("名称已存在");
 				}
@@ -121,6 +119,7 @@ const _io = {
 				}
 			})
 		}else{
+			//如果处于登录状态
 			this.setMessageData();
 		}
 	},
@@ -131,7 +130,7 @@ const _io = {
 	sendMessage(msg,to){
 		this.socket.emit("message",{content:msg,from:this.myName,to:to});
 	},
-	//没有刷新页面，重新进来时的缓存数据
+	//与组件中的数据进行绑定
 	setMessageData(){
 		this.vue.onlineUsers = this.onlineUsers;
 		this.vue.onlineCount = this.onlineCount;
@@ -148,13 +147,6 @@ const _io = {
 		}
 		this.friends = t.friends;
 	}
-/*	refresh(){
-		this.socket={};
-		this.vue={};
-		this.firstTime=true;
-		this.loginInfo={};
-		this.myName="";
-	}*/
 }
 
 

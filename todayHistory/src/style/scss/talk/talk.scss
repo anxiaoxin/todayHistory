@@ -200,6 +200,14 @@
 	li{
 		display: inline-block;
 		margin: 0.2rem;
+		span{
+			border: 1px solid gray;
+			padding: 0.2rem;
+			border-radius: 0.1rem;
+		}
+	}
+	.red{
+		border-color: red;
 	}
 	.close{
 		position: absolute;

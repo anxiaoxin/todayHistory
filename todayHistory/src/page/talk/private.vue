@@ -34,6 +34,7 @@
 			}
 		},
 		created(){
+			//在created的时候进行vue的绑定以及缓存数据的读取
 			this.$api._io.bindfriend(this);
 			this.friends = this.$api._io.friends;
 			this.myName = this.$api._io.myName;

@@ -1,9 +1,9 @@
 const app = require("express")();
 const http = require("http").Server(app);
 const io = require("socket.io")(http);
-const mysql = require("mysql");
-const _under = require("underscore");
-const _m = require("moment");
+const mysql = require("mysql");//本想进行些数据库的操作，暂时不需要
+const _under = require("underscore"); 
+const _m = require("moment"); //node中关于事件管理的一个模块，暂时不需要
 
 /*let DataBase = "talk";
 let Table = 'userInfo';
@@ -60,23 +60,22 @@ io.on('connection',function(socket){
 
 	socket.on("message",function(obj){
 		console.log("后台接收到来自"+obj.from+"发向"+obj.to+"的消息",obj.content);
-		if(!socket.name){
+		if(!socket.name){ //掉线重连后并不会触发login事件，所以没有name属性
 			socket.emit("offline",true);
 			return ;
 		}
-		if(obj.to){
+		if(obj.to){//如果是私聊
 			let toSocket = _under.findWhere(io.sockets.sockets,{name:obj.to});
-			if(toSocket){//如果对方在线
+			if(toSocket){//如果对方在线，向对方还有自己发送信息
 				toSocket.emit("message",{from:obj.from,to:obj.to,content:obj.content,private:true});
 				socket.emit("message",{from:obj.from,to:obj.to,content:obj.content,private:true});//向自己发一份
 				console.log("分别向"+toSocket.name+"与"+socket.name+"广播message事件并发送数据",{from:obj.from,to:obj.to,content:obj.content,private:true});
-			}else{
+			}else{//如果对方不在线，只向自己发送信息，并带有离线的标记
 				socket.emit("message",{from:obj.from,to:obj.to,content:obj.content,private:true,offline:true});//向自己发一份
 				console.log("向"+socket.name+"广播message事件并发送数据",{from:obj.from,to:obj.to,content:obj.content,private:true,offline:true});				
 			}
 			
-			
-		}else{
+		}else{//群聊
 			io.emit("message",{from:obj.from,to:obj.to,content:obj.content,private:false,onlineUsers:onlineUsers,onlineCount:onlineCount});
 			console.log("向所有客户端广播message事件，并发送数据",{from:obj.from,to:obj.to,content:obj.content,private:false,onlineUsers:onlineUsers,onlineCount:onlineCount});
 		}

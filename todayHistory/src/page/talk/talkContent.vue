@@ -27,7 +27,7 @@
 			<div>
 				<i class="fa fa-window-close-o close" v-on:click='closeList("onlineList")'></i>
 				<li v-for="item in onlineUsers" v-on:click="talkPrivate(item)">
-					{{item}}
+					<span v-bind:class="{red:item == myName}">{{item}}</span>
 				</li>
 			</div>
 		</div>
@@ -88,6 +88,7 @@
 				this.$router.push({path: "/talk/private/"+name})
 			},
 			scroll(){
+				//滚动到最底部
 				this.msgContent.scrollTop = this.msgContent.scrollHeight;
 			},
 			//键盘出来后延时滚动
@@ -105,12 +106,13 @@
 			}
 		},
 /*		watch:{
-			messageList(){
-				this.msgContent.scrollTop = this.msgContent.scrollHeight;
+			friends(){
+				console.log("观察到变化",this.friends);
 			}
 		},*/
 		//watch要早于DOM更新，updated为DOM更新后触发
 		updated(){
+			//收到消息后界面滚动到最底部
 			this.scroll();
 		},
 		beforeRouteEnter (to,from,next){
