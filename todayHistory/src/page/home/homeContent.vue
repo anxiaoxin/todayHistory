@@ -13,9 +13,9 @@
 			</router-link>
 		</div>		
 		<div class="homepageItem">
-			<router-link to="" class="">
-				<img src="" alt="">
-				<div class="itemtitle"><span>暂无</span></div>
+			<router-link to="/tlogin" class="">
+				<img src="../../assets/img/jianghu.jpg" alt="">
+				<div class="itemtitle"><span>大侠也爱唠大嗑</span></div>
 			</router-link>
 		</div>		
 		<div class="homepageItem">

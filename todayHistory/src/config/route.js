@@ -13,6 +13,10 @@ import jokeContent from '../page/joke/jokeContent'
 import joketext from '../page/joke/text'
 import jokeimg from '../page/joke/img'
 
+import talk from '../page/talk/talkContent'
+import tlogin from '../page/talk/login'
+import pri from '../page/talk/private'
+
 export default [
 	{
 		path: '/',
@@ -55,7 +59,28 @@ export default [
 						component: jokeimg
 					}
 				]
-			}			
+			},
+			{
+				path: '/tlogin',
+				components: {
+					head:tlogin,
+					content:""
+				}
+			},
+			{
+				path: '/talk/rome',
+				components: {
+					head:talk,
+					content:""	
+				},
+			},
+			{
+				path: '/talk/private/:user',
+				components: {
+					head:pri,
+					content:""	
+				},
+			}									
 		]
 	},
 

@@ -1,7 +1,7 @@
 export default {
 	state:{
 		thistmp:"",
-		flag:""
+		flag:"",
 	},
 	mutations:{
 		//调用读取数据api

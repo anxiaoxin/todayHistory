@@ -26,6 +26,9 @@ Vue.prototype.$api = api;
 const store = new Vuex.Store(Store)
 
 const router = new VueRouter({routes})
+router.beforeEach((to, from, next) => {
+	next();
+})
 
 
 //定义jsonp回调，使用闭包

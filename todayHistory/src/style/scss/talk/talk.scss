@@ -1,0 +1,242 @@
+.loginContent{
+	font-size: 0.5rem;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	margin-top: 3rem;
+	input{
+		font-size: 0.5rem;
+	}
+	button{
+		font-size: 0.5rem;
+	}
+	.globe{
+		font-size: 2rem;
+		margin-top: 3rem;
+		text-align: center;
+		color: green;
+	}
+}
+
+.talkHead{
+	position: relative;
+	z-index: 100;
+	width: 100%;
+	height: 1rem;
+	background-color: rgb(61,61,59);
+	position: fixed;
+	top: 0;
+	font-size: 0.4rem;
+	color: white;
+	-webkit-box-sizing:border-box;
+	padding: 0.3rem 0.2rem 0;
+	.left{
+		float: left;
+	}
+	.right{
+		float: right;
+		span{
+			padding: 0 0.5rem;
+			margin-left: 0.5rem;
+			border-left: 2px white solid;
+		}
+	}
+	.center{
+		text-align: center;
+	}
+}
+
+.talkContent{
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	top: 0;
+	margin-top: 1.2rem;
+	margin-bottom: 1.6rem;
+	padding-bottom: 1rem;
+	overflow-y: auto;
+	li{
+		list-style-type: none;
+		font-size: 0.5rem;
+		width: 100%;
+		.msgBox{
+			margin: 0.1rem;
+			div{
+				display: inline-block;
+				position: relative;
+				max-width: 5rem;
+				padding: 0.2rem;
+				word-break: break-all;
+			}
+		}
+		.left{
+			span{
+				float: left;
+				font-size: 0.3rem;
+			}
+			div{
+				margin-left: 0.2rem; 
+				background-color: pink;
+				border:1px solid pink;
+				border-radius: 0.2rem;
+			}
+			div:before{
+				content: "";
+			    width: 0;
+			    height: 0;
+			    border-top: 0.2rem solid pink;
+			    border-left: 0.2rem solid transparent; 
+				position: relative;
+				left: -0.1rem;
+				top: 0.1rem;	
+				position: absolute;			
+			}
+		}
+		.right{
+			overflow-y: auto;
+			span{
+				float: right;
+				font-size: 0.3rem;
+			}
+			div{
+				position: relative;
+				float: right;
+				margin-right: 0.2rem;
+				background-color: #4bde48;
+				border:1px solid #4bde48;
+				border-radius: 0.2rem;
+			}
+			div:after{
+				content: "";
+			    width: 0;
+			    height: 0;
+			    border-top: 0.2rem solid #4bde48;
+			    border-right: 0.2rem solid transparent; 
+				position: absolute;
+				right: -0.1rem;
+				top: 0.1rem;				
+			}
+			.offline{
+				position: relative;
+				font-size: 0.2rem;
+				color: red;
+				text-align: center;
+				width: 3rem;
+				bottom: -0.5rem;
+			}
+		}
+		.inout{
+			text-align: center;
+			font-size: 0.3rem;
+			margin: 0.2rem 0;
+		}
+	}
+}
+
+.talkFoot{
+	width: 100%;
+	height: 1.4rem;
+	overflow-y: auto;
+	background-color: rgb(245,245,245);
+	border-top: 1px solid gray;
+	position: fixed;
+	bottom: 0;
+	padding: 0 0.5rem;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */	
+	.footdiv{
+		position: relative;
+		// top: 0.2rem;
+		width: 90%;
+		margin: 0 auto 0.2rem;
+		#text{
+			display: inline-block;
+			width: 70%;
+			max-height: 0.9rem;
+			overflow-y: auto;
+			background-color: transparent;
+			border: none;
+			border-bottom: 1px solid green;
+			font-size: 0.4rem;
+			&:focus{
+				outline: none;
+			}
+		}
+		button{
+			position: relative;
+			font-size: 0.4rem;
+			padding: 0.1rem 0.2rem;
+			-webkit-box-size:border-box;
+			background-color: rgb(3,154,277);
+			border-radius: 10%;
+			top: -0.2rem;
+		}
+	}
+}
+
+.onlineList{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0,0,0,0.3);
+	font-size: 0.5rem;
+	div{
+		width: 5rem;
+		height: 5rem;
+		max-height: 6rem;
+		overflow-y: auto;
+		background-color: white;
+		border: 1px solid gray;
+		border-radius: 0.2rem;
+		padding: 0.5rem;
+		position: relative;
+	}
+	li{
+		display: inline-block;
+		margin: 0.2rem;
+	}
+	.close{
+		position: absolute;
+		right: 0.1rem;
+		top: 0rem;
+	}
+}
+
+.friendsList{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0,0,0,0.3);
+	font-size: 0.4rem;
+	div{
+		width: 6rem;
+		height: 8rem;
+		overflow-y: auto;
+		background-color: white;
+		border: 1px solid gray;
+		border-radius: 0.2rem;
+		padding: 0.5rem;
+		position: relative;
+	}
+	li{
+		list-style-type: none;
+		border-bottom: 1px gray solid;
+		padding: 0.2rem;
+	}
+	.close{
+		position: absolute;
+		right: 0.1rem;
+		top: 0rem;
+	}	
+}
