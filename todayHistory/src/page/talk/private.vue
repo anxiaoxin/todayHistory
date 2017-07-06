@@ -17,7 +17,7 @@
 		<div class="talkFoot">
 			<div class="footdiv">
 				<div contenteditable="true" id="text" v-on:click="scrollLate"></div>
-				<button v-on:click="sendMessage">发送</button>	
+				<button v-on:click="sendMessage" id="click">发送</button>	
 			</div>
 		</div>
 	</div>
@@ -41,6 +41,7 @@
 			this.friendName = this.$route.params.user;
 		},
 		mounted(){
+			this.$api._io.bindEnter();
 			this.msgContent = document.getElementById("content");
 		},
 		methods:{
@@ -71,6 +72,7 @@
 			}			
 		},
 		updated(){
+			//收到消息后界面滚动到最底部
 			this.scroll();
 		},
 		beforeRouteEnter (to,from,next){

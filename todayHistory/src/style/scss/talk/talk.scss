@@ -61,6 +61,11 @@
 		width: 100%;
 		.msgBox{
 			margin: 0.1rem;
+			span{
+				width: 1.8rem;
+				font-size: 0.3rem;
+				text-align: center;
+			}
 			div{
 				display: inline-block;
 				position: relative;
@@ -72,7 +77,6 @@
 		.left{
 			span{
 				float: left;
-				font-size: 0.3rem;
 			}
 			div{
 				margin-left: 0.2rem; 
@@ -96,7 +100,6 @@
 			overflow-y: auto;
 			span{
 				float: right;
-				font-size: 0.3rem;
 			}
 			div{
 				position: relative;

@@ -20,7 +20,7 @@
 		<div class="talkFoot">
 			<div class="footdiv">
 				<div contenteditable="true" id="text" v-on:click="scrollLate"></div>
-				<button v-on:click="sendMessage">发送</button>	
+				<button v-on:click="sendMessage" id="click">发送</button>	
 			</div>
 		</div>
 		<div class="onlineList" id="onlineList" style="display:none;">
@@ -61,7 +61,11 @@
 			this.$api._io.init(this);
 		},
 		mounted(){
+			//添加监听Enter键
+			this.$api._io.bindEnter();
+			//绑定消息元素，调整scroll时用到
 			this.msgContent = document.getElementById("content");
+			this.scroll();
 		},
 		methods:{
 			sendMessage(){

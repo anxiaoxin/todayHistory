@@ -146,6 +146,19 @@ const _io = {
 			}
 		}
 		this.friends = t.friends;
+	},
+	bindEnter(){
+		let text = document.getElementById("text");
+		let button = document.getElementById("click");
+		if(text){
+			text.onkeydown = function(e){
+		        let theEvent = e || window.event;    
+		        let code = theEvent.keyCode || theEvent.which || theEvent.charCode;    
+		        if (code == 13) {    
+		             button.click();
+		        }    
+			}
+		}
 	}
 }
 
