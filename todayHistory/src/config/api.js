@@ -56,7 +56,7 @@ const _io = {
 		let _this = this;
 		//如果该用户还没登录
 		if(!this.iflogin){
-			this.socket = io.connect('ws://172.16.22.18:3000');
+			this.socket = io.connect('ws://www.kyctj.com:3000');
 			this.socket.on("login",function(data){
 				if(data){
 					//对基本数据进行缓存，当用户回到聊天界面时显示
@@ -102,15 +102,15 @@ const _io = {
 					}
 				}else{
 					//来自群发
-					_this.vue.onlineUsers = data.onlineUsers;
-					_this.vue.onlineCount = data.onlineCount;					
+					_this.onlineUsers = data.onlineUsers;
+					_this.onlineCount = data.onlineCount;					
 					_this.messageList.push({inout:false,from:data.from,content:data.content});
 				}
 			});
 			this.socket.on("logout",function(data){
 				_this.messageList.push({inout:true,content:data.userName + "离开群聊"});
-				_this.vue.onlineUsers = data.onlineUsers;
-				_this.vue.onlineCount = data.onlineCount;
+				_this.onlineUsers = data.onlineUsers;
+				_this.onlineCount = data.onlineCount;
 			});
 			this.socket.on("offline",function(data){
 				if(data){

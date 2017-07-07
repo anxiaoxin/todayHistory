@@ -20,7 +20,7 @@ let setSize = function(doc, win){
 		resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
 	docEl.dataset.dpr = dpr;
 	if(IsPC()){
-		docEl.style.fontSize = '50px';
+		docEl.style.fontSize = '100px';
 	}else{
 		var recalc = function() {
 			var width = docEl.clientWidth;
