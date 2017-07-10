@@ -1,4 +1,5 @@
-# 基于Vue-cli + Vue + Vue-router + Vuex + webpack单页小应用
+# 基于Vue-cli + Vue + Vue-router + Vuex + webpack单页小应用  
+[在线访问](http://www.tjbeehive.com/tiana/#/) (手机访问最佳)
 #### 环境配置推荐教程 [Vue2+VueRouter2+webpack 构建项目实战](http://blog.csdn.net/ycm_920414/article/details/61913385)
 
 在跟着上述教程走了一遍以后大致对这种开发的方式有了一定的理解，所以打算做一个自己的小应用进行一下融会贯通。但没有自己的服务器并且也不会后台，于是
@@ -31,4 +32,4 @@
 在src下的server文件夹下，主要是node服务器端的内容。关于环境的搭建与配置可以看我提到的那篇博客（因为我也是看着他的来的）。
 #### 前端部分
 关于前端部分的重要HTML与js等部分在talk文件夹下，因为是与本单页小demo的结合，所以功能实现部分拆分的比较厉害，我尽可能的加下注释。  
-[在线访问](http://www.tjbeehive.com/tiana/#/) (手机访问最佳)
+
