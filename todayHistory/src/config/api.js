@@ -111,6 +111,7 @@ const _io = {
 				_this.messageList.push({inout:true,content:data.userName + "离开群聊"});
 				_this.onlineUsers = data.onlineUsers;
 				_this.onlineCount = data.onlineCount;
+				_this.setMessageData();
 			});
 			this.socket.on("offline",function(data){
 				if(data){
